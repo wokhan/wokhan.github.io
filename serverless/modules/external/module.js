@@ -61,7 +61,10 @@
                     }
                 };
             })();
-            xhttp.open("GET", "content/" + contentid + ".html" /*?rnd=" + new Date().getTime()*/, true);
+
+            //Temporary workaround for light dev servers not supporting querystring for static files 
+            const isLocal = (document.location.href.indexOf("http://127.0.0.1") !== -1);
+            xhttp.open("GET", "content/" + contentid + ".html" + (isLocal ? "" : "?rnd=" + new Date().getTime()), true);
             xhttp.send();
         },
         enableEditMode: function () {
