@@ -278,9 +278,26 @@ img.program_header_icon {
     width: 70px;
 }
 
+.homelayout {
+    display: flex;
+    flex-direction: row;
+}
 
-@media only screen and (max-width: 810px) {
+.leftcolumn {
+    flex: 3; 
+}
 
+.tweets {
+    flex: 1;
+    margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .homelayout {
+        display: block;
+    }
+    
     div#container {
         margin: 0;
     }
@@ -318,7 +335,7 @@ img.program_header_icon {
     }
 
     #headertext {
-        left: 150px;
+        left: 250px;
         font-size: 0.6em;
     }
 
@@ -475,3 +492,4 @@ img.program_header_icon {
         max-width: 250px;
     }
 }
+

@@ -61,7 +61,7 @@
                     }
                 };
             })();
-            xhttp.open("GET", "content/" + contentid + ".html?rnd=" + new Date().getTime(), true);
+            xhttp.open("GET", "content/" + contentid + ".html" /*?rnd=" + new Date().getTime()*/, true);
             xhttp.send();
         },
         enableEditMode: function () {
