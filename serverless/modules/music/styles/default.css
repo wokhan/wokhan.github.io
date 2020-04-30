@@ -1,0 +1,67 @@
+﻿.album img {
+    border: 5px solid white;
+    display: inline-block;
+    box-shadow: 2px 2px 0px lightgray;
+    height: 250px;
+}
+
+.album .tracks {
+    margin-left: 20px;
+    display: inline-block;
+    list-style: decimal-leading-zero;
+}
+
+    .album .tracks li:hover {
+        color: darkblue;
+    }
+
+    .album .tracks li::before {
+        content: '>';
+        margin-left: -50px;
+        margin-right: 50px;
+    }
+
+.albumstores {
+    float: right;
+}
+
+    .albumstores a {
+        display: block;
+        width: 120px;
+        height: 50px;
+        background-repeat: no-repeat;
+    }
+
+        .albumstores a.qobuz {
+            background-image: url(../images/qobuz.png);
+        }
+
+        .albumstores a.deezer {
+            background-image: url(../images/deezer.png);
+        }
+
+        .albumstores a.emusic {
+            background-image: url(../images/emusic.png);
+        }
+
+        .albumstores a.itunes {
+            background-image: url(../images/itunes.png);
+        }
+
+        .albumstores a.amazon {
+            background-image: url(../images/amazon.png);
+        }
+
+        .albumstores a.spotify {
+            background-image: url(../images/spotify.png);
+        }
+
+#audioPlayer {
+    position: absolute;
+    border-radius: 10px;
+    top: -20px;
+    pointer-events: initial;
+    right: 0px;
+    height: 40px;
+    width: 500px;
+}

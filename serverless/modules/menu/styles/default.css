@@ -1,0 +1,100 @@
+
+ul[data-menu-for=container] {
+    position: absolute;
+    font-size: large;
+    vertical-align: top;
+    left: 0px;
+    top: 0px;
+}
+
+    ul[data-menu-for=container] > li.menu {
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        ul[data-menu-for=container] > li.menu:hover {
+            font-weight: bold;
+        }
+
+        ul[data-menu-for=container] > li.menu::after {
+            content: '';
+            border-bottom: 2px solid transparent;
+            display: block;
+            width: 0;
+            margin: 0 50%;
+            transition: border 0.2s ease-in-out, width 0.2s ease-in-out, margin 0.2s ease-in-out;
+        }
+
+        ul[data-menu-for=container] > li.menu:hover::after {
+            content: '';
+            border-bottom: 2px solid steelblue;
+            display: block;
+            margin: 0;
+            width: 100%;
+        }
+
+li.menu > ul {
+    margin-top: -40px;
+    opacity: 0;
+    transition: margin-top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    visibility: hidden;
+}
+
+li.menu:hover > ul {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+li.menu > ul {
+    padding: 0px;
+    position: absolute;
+    background: white;
+    text-align: left;
+    font-size: medium;
+    font-weight: normal;
+    box-shadow: 0px 5px 10px 2px gray;
+}
+
+    li.menu > ul > li.menu {
+        display: block;
+        margin: 5px;
+        padding: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: darkslategray;
+        border-bottom: 1px solid lightgray;
+        transition: background 0.2s ease-in-out;
+    }
+
+        li.menu > ul > li.menu:last-child {
+            border-bottom: none;
+        }
+
+        li.menu > ul > li.menu > a > img {
+            max-height: 20px;
+            max-width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        li.menu > ul > li.menu:hover {
+            border-bottom: none;
+            margin: 5px -10px 6px -10px;
+            padding: 12px 27px;
+            background: lightgray;
+        }
+
+        li.menu > ul > li.menu > a::after {
+            content: attr(title);
+            display: block;
+            margin-left: 25px;
+            font-size: small;
+            font-weight: normal;
+        }
+
+@media only screen and (max-width: 600px) {
+
+}

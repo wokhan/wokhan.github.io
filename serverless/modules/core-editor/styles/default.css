@@ -1,0 +1,23 @@
+﻿#dynamicEditor {
+    border-radius: 5px;
+    background: whitesmoke;
+    z-index: 10001;
+    position: absolute;
+    box-shadow: 2px 2px 10px gray;
+}
+
+#dynamicEditor a {
+    border-radius: 15px;
+    background: lightgray;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+    #dynamicEditor a:hover {
+        background: lightblue;
+        cursor: pointer;
+    }

@@ -1,0 +1,37 @@
+﻿
+.pagecontent_toolbar {
+    position: absolute;
+    background: white;
+    vertical-align: middle;
+    box-shadow: 2px 2px 2px lightgray;
+    pointer-events: initial;
+}
+
+    .pagecontent_toolbar button {
+        margin: 5px;
+        display: inline-block;
+        border: none;
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
+    }
+
+        .pagecontent_toolbar button:hover {
+            background-color: lightblue;
+        }
+
+.external_edit {
+    background: lightgray url(../images/edit.png) no-repeat;
+    background-size: 30px;
+}
+
+
+.external_save {
+    background: lightgray url(../images/save.png) no-repeat;
+    background-size: 30px;
+}
+
+.external_cancel {
+    background: lightgray url(../images/edit.png) no-repeat;
+    background-size: 30px;
+}

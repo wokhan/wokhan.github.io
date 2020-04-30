@@ -1,0 +1,21 @@
+﻿
+.video {
+    position: relative;
+}
+
+    .video::before {
+        content: attr(data-youtube-title);
+        display: block;
+    }
+
+    .video::after {
+        position: absolute;
+        top: 90px;
+        left: 150px;
+        content: url(../images/YouTube-icon-full_color.png);
+        display: block;
+    }
+
+    .video.playing::after {
+        display: none;
+    }
