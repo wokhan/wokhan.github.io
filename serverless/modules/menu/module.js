@@ -21,12 +21,12 @@
                 return;
             }
 
-            var allmenu = [].slice.call(container.querySelectorAll("[data-modules-menu]"));
+            const allmenu = [].slice.call(container.querySelectorAll("[data-modules-menu]"));
             if (!allmenu.length) {
                 return;
             }
 
-            var menuContainer = document.querySelector("ul[data-menu-for=" + container.id + "]");
+            let menuContainer = document.querySelector("ul[data-menu-for=" + container.id + "]");
             if (!menuContainer) {
                 menuContainer = document.createElement("ul");
                 menuContainer.setAttribute("data-menu-for", container.id);
@@ -34,39 +34,45 @@
             }
 
             while (allmenu.length) {
-                var marker = allmenu.shift();
+                const marker = allmenu.shift();
                 if (prvallmenu) {
                     delete prvallmenu[prvallmenu.indexOf(marker)];
                 }
 
                 if (marker === undefined) { continue; }
-                var li = document.createElement("li");
+                const li = document.createElement("li");
                 li.className = "menu";
 
-                var mlnk = document.createElement("a");
+                const mlnk = document.createElement("a");
                 //mlnk.setAttribute("data-menu-linkid", marker.id);
-                var img = marker.getAttribute("data-menu-image");
+                const img = marker.getAttribute("data-menu-image");
                 if (img !== null) {
-                    var xtimg = document.createElement("img");
-                    xtimg.src = img;
+                    let xtimg;
+                    if (typeof(img) === "string" && img.startsWith("fa")) {
+                        xtimg = document.createElement("i");
+                        xtimg.className = img;
+                    } else {
+                        xtimg = document.createElement("img");
+                        xtimg.src = img;
+                    }
                     mlnk.appendChild(xtimg);
                 }
                 mlnk.appendChild(document.createTextNode(marker.title));
                 li.appendChild(mlnk);
 
-                var title = marker.getAttribute("data-description");
+                const title = marker.getAttribute("data-description");
                 if (title !== null) {
                     mlnk.title = title;
                 }
 
                 menuContainer.appendChild(li);
-
+                
                 if (marker.className.indexOf("page") !== -1) {
                     li.addEventListener("click", (function () { var b = marker.id; return function () { document.location.hash = b; }; })(), true);
                 }
-
+                
                 this.apply(marker, li, allmenu);
-
+                
                 /*
                 if (marker.getAttribute("data-menu-static") !== null) {
                     // Copies a clone into the page (since the clone should move with the latter when turning page, keeping the original in place)

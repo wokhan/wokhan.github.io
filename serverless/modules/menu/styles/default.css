@@ -1,5 +1,6 @@
 
 ul[data-menu-for=container] {
+    display: inline-block;
     position: absolute;
     font-size: large;
     vertical-align: top;
@@ -46,6 +47,11 @@ li.menu:hover > ul {
     margin-top: 0;
     opacity: 1;
     visibility: visible;
+}
+
+li.menu > a > i.fas, li.menu > a > i.far {
+    margin-right: 5px;
+    color: gray;
 }
 
 li.menu > ul {

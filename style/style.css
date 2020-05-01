@@ -17,13 +17,26 @@ h2 {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
     font-size: 1.2em;
-    margin: 20px 0 10px 0;
     padding: 5px 20px;
     display: block;
     color: steelblue;
     border-radius: 20px;
     box-shadow: 2px 2px 2px lightgray;
     background: whitesmoke;
+    margin: 30px 0 20px 0;
+    overflow-y: visible;
+    height: 28px;
+}
+
+h2 > i {
+    background: white;
+    border-radius: 30px;
+    border: 2px solid lightgray;
+    padding: 15px;
+    margin: -20px 0px -20px -10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
 }
 
 h3 {
@@ -165,6 +178,7 @@ li.mobilemenu > ul {
 }
 
 ul[data-menu-for=container] {
+    display: none;
     background: white;
     position: absolute;
     left: 250px !important;
@@ -202,7 +216,7 @@ li.menu:hover > ul {
 
 #headertext {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 650px;
     font-weight: bold;
     font-size: larger;
@@ -335,6 +349,7 @@ img.program_header_icon {
     }
 
     #headertext {
+        top: 10px;
         left: 250px;
         font-size: 0.6em;
     }
