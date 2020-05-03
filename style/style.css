@@ -23,9 +23,14 @@ h2 {
     border-radius: 20px;
     box-shadow: 2px 2px 2px lightgray;
     background: whitesmoke;
+    background: linear-gradient(white, whitesmoke);
     margin: 30px 0 20px 0;
     overflow-y: visible;
     height: 28px;
+}
+
+h2:first-child{
+    margin-top: 10px;
 }
 
 h2 > i {
@@ -33,18 +38,19 @@ h2 > i {
     border-radius: 30px;
     border: 2px solid lightgray;
     padding: 15px;
-    margin: -20px 0px -20px -10px;
+    margin: -20px 5px -20px -10px;
     width: 20px;
     height: 20px;
     text-align: center;
 }
 
 h3 {
-    border-bottom: 1px dashed lightgrey;
+    border-bottom: 2px dashed lightgrey;
     font-family: 'Segoe UI', sans-serif;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 1.1em;
     margin-top: 15px;
+    color: slategray;
 }
 
 blockquote {
@@ -86,6 +92,7 @@ img {
 div.header {
     padding: 10px;
     background: white;
+    background: linear-gradient(white, whitesmoke);
     text-align: left;
     box-shadow: 0 2px 20px black;
     z-index: 100;
@@ -136,7 +143,7 @@ div.page {
     visibility: hidden;
     /*margin: 90px 0 0 0;*/
     padding: 20px;
-    margin-top: 90px;
+    margin-top: 70px;
     z-index: 0;
     /*transition: margin-top 0.2s ease-in-out;*/
 }
@@ -163,7 +170,7 @@ li.mobilemenu {
 
 #headermenu {
     position: absolute;
-    top: 0px;
+    top: 5px;
     width: 100%;
 }
 
@@ -179,32 +186,37 @@ li.mobilemenu > ul {
 
 ul[data-menu-for=container] {
     display: none;
-    background: white;
     position: absolute;
-    left: 250px !important;
-    top: 11px !important;
-    bottom: -10px;
+    left: 200px !important;
+    font-size: 1em !important;
+    /*top: 11px !important;
+    bottom: -10px;*/
 }
 
     ul[data-menu-for=container] > li.menu {
         width: 100px;
-        height: 65px;
+        padding-bottom:20px;
+        /*height: 65px;*/
     }
 
-li.menu > ul {
-    background: white;
-    margin-top: 0 !important;
-}
+    li.menu > a > i.fas, li.menu > a > i.far{
+        margin-right: 10px !important;
+    }
 
-li.menu:hover > ul {
-    margin-top: 37px !important;
-}
+    li.menu > ul {
+        background: white;
+        margin-top: -30px !important;
+    }
+
+    li.menu:hover > ul {
+        margin-top: 10px !important;
+    }
 
 /**** Header logo ****/
 #headercontainer {
     position: relative;
     font-size: larger;
-    margin: -20px -20px 0px -20px;
+    margin: -20px -20px 20px -20px;
     background-color: #6a6a6a;
     background-image: url(../content/assets/home_header_bk.png);
 }
@@ -290,6 +302,39 @@ img.program_header_icon {
     box-shadow: 1px 1px 6px 0 gray;
     background: white;
     width: 70px;
+}
+
+h2::before{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    background: white;
+    border-radius: 30px;
+    border: 2px solid lightgray;
+    padding: 15px;
+    margin: -20px 10px -20px -10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+h2.getit::before {
+    content: '\f019';
+}
+
+h2.screenshots::before{
+    content: '\f108';
+}
+
+h2.features::before{
+    content: '\f03a';
+}
+
+h2.reviews::before{
+    content: '\f0ae';
+}
+
+h2.privacy::before{
+    content: '\f21b';
 }
 
 .homelayout {
