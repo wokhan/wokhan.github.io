@@ -102,6 +102,13 @@ div.header {
     right: 0;
 }
 
+div.logo img{
+    height: 50px;
+    margin-right: 10px; 
+    vertical-align: top; 
+    display: inline-block;
+}
+
 div.footer {
     position: fixed;
     bottom: 0;
@@ -380,12 +387,16 @@ h2.privacy::before{
         top: 0;
         left: 0;
         right: 0;
-        font-size: 0.5em;
+        font-size: 0.8em;
+        height: 40px;
+    }
+        
+    div.logo img{
         height: 40px;
     }
 
     #headercontainer {
-        margin: -5px -20px 0px -20px;
+        margin: -5px -20px 20px -20px;
     }
 
     #headerlogo {
@@ -405,7 +416,7 @@ h2.privacy::before{
         position: absolute;
         height: 35px;
         left: 5px;
-        top: 6px;
+        top: -3px;
     }
 
         li.mobilemenu > a#menutoggleon {
@@ -458,7 +469,9 @@ h2.privacy::before{
             opacity: 0;
             transition: margin-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
             visibility: hidden;
+            font-size: 1.2em !important;
         }
+        
 
             li.mobilemenu ul[data-menu-for=container] > li.menu {
                 padding-left: 10px;
@@ -467,6 +480,10 @@ h2.privacy::before{
                 display: block !important;
                 background: white !important;
                 width: 100% !important;
+            }
+
+            li.mobilemenu ul[data-menu-for="container"] > li.menu:hover::after {
+                border-bottom: none;
             }
 
     li#menu:target > a#menutoggleon {
@@ -490,7 +507,6 @@ h2.privacy::before{
     }
 
     li#menu:target ul[data-menu-for=container] {
-        /*li.mobilemenu:hover ul[data-menu-for=container] {*/
         top: 0px !important;
         padding-top: 0px;
         margin-left: 10px;
@@ -499,7 +515,6 @@ h2.privacy::before{
     }
 
     li.menu {
-        min-height: 50px !important;
         height: auto !important;
     }
 
