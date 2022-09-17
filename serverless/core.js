@@ -45,10 +45,11 @@
         },
         Engine: {
             _currentpage: null,
+            _headsrc: null,
             init: function () {
-                var headsrc = document.head.querySelector("script[data-serverless-script]");
-                var modules = headsrc.getAttribute("data-modules");
-                Wokhan.ServerLess.IsBundled = headsrc.getAttribute("data-serverless-script") === "bundled";
+                _headsrc = document.head.querySelector("script[data-serverless-script]");
+                var modules = _headsrc.getAttribute("data-modules");
+                Wokhan.ServerLess.IsBundled = _headsrc.getAttribute("data-serverless-script") === "bundled";
 
                 if (modules !== null) {
                     modules.split(",").forEach(function (it, ix, ar) {
@@ -139,13 +140,14 @@
                     script.addEventListener("load", loadcallback);
                 }
                 document.getElementsByTagName("head")[0].appendChild(script);
+
             },
             addCSS: function (path) {
                 var link = document.createElement("link");
                 link.rel = "stylesheet";
                 link.type = "text/css";
                 link.href = "serverless/modules/" + path;
-                document.getElementsByTagName("head")[0].appendChild(link);
+                document.getElementsByTagName("head")[0].insertBefore(link, _headsrc);
             },
             CheckApplied: function (module, container, mark) {
                 if (container.getAttribute("data-" + module.name + "-done") !== null) {

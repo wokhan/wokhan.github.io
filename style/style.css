@@ -94,7 +94,7 @@ div.header {
     background: white;
     background: linear-gradient(white, whitesmoke);
     text-align: left;
-    box-shadow: 0 2px 20px black;
+    box-shadow: 0 0 10px 0px gray;
     z-index: 100;
     position: fixed;
     top: 0;
@@ -136,7 +136,7 @@ div#container {
     left: 30px;
     right: 30px;
     bottom: 0;
-    box-shadow: 0 2px 20px black;
+    box-shadow: 0 0 10px 0px grey;
     background: white;
 }
 
@@ -150,7 +150,7 @@ div.page {
     visibility: hidden;
     /*margin: 90px 0 0 0;*/
     padding: 20px;
-    margin-top: 70px;
+    margin-top: 80px;
     z-index: 0;
     /*transition: margin-top 0.2s ease-in-out;*/
 }
@@ -202,9 +202,13 @@ ul[data-menu-for=container] {
 
     ul[data-menu-for=container] > li.menu {
         width: 100px;
-        padding-bottom:20px;
+        padding-bottom: 20px;
         /*height: 65px;*/
     }
+
+        ul[data-menu-for=container] > li.menu:hover::after {
+            margin: 5px 0 0 0 !important;
+        }
 
     li.menu > a > i.fas, li.menu > a > i.far{
         margin-right: 10px !important;
